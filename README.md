@@ -9,6 +9,7 @@ This project was inspired by my interest in playing Sudoku during my vacation. I
 - Solves Sudoku puzzles automatically
 - Validates rows, columns, and 3×3 subgrids
 - Uses recursive backtracking
+- Mark zero as empty space.
 
 ## Concepts Used
 - C Programming
