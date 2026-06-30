@@ -111,22 +111,25 @@ int main() {
     // }
 
 
-    //int i = 0, j = 0;
+    int i = 0, j = 0;
     while (x<max) {
+        int row = empty_cell[x][0];
+        int col = empty_cell[x][1];
+        board[row][col] = 0; 
         // board[i][j] = 0;
         int s = possible_num(poss, nums, empty_cell[x][0], empty_cell[x][1], board);
 
         int placed = 0;
         for (int k = try_index[empty_cell[x][0]][empty_cell[x][1]]; k < s; k++) {
-            board[empty_cell[x][0]][empty_cell[x][1]] = poss[k];
-            try_index[empty_cell[x][0]][empty_cell[x][1]] = k + 1;
+            board[row][col] = poss[k];
+            try_index[row][col] = k + 1;
             placed = 1;
             break;
         }
 
         if (!placed) {
-            try_index[empty_cell[x][0]][empty_cell[x][1]] = 0;
-            board[empty_cell[x][0]][empty_cell[x][1]] = 0;
+            try_index[row][col] = 0;
+            board[row][col] = 0;
             if (x == 0) {
                 printf("Bhari mistake hua hai ! maybe sudoku shi generate nhi hua!");
                 break;
@@ -145,7 +148,6 @@ int main() {
         for (int j = 0; j < 9; j++) printf("\t[%d]", board[i][j]);
         printf("\n\n");
     }
-    printf("\n\n");
 
     
     return 0;
