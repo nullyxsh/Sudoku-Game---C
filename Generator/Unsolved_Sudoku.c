@@ -1,4 +1,3 @@
-//Unsolved Sudoku Generator without difficulty
 #include <stdio.h>
 #include<stdlib.h>
 #include<time.h>
@@ -69,6 +68,7 @@ int main() {
     srand(time(NULL));
     int nums[9] = {1,2,3,4,5,6,7,8,9};
     int poss[9];
+    int diff = 0;
 
     for (int i = 0; i < 9; i++) {
         int r = rand() % 9;
@@ -102,9 +102,33 @@ int main() {
         }
     }
 
+
+
+    //solved gen!!
+    printf("Solved generation for Checking:\n");
     for (int i = 0; i < 9; i++) {
         for (int j = 0; j < 9; j++) printf("\t[%d]", board[i][j]);
         printf("\n\n");
     }
+    printf("\nEnter the number of empty spaces:");
+    scanf("%d",&diff);
+    
+
+    for(int i=0;i<diff;i++){
+        int x=rand() % 9;
+        int y=rand() % 9;
+
+        board[x][y]=0;
+
+    }
+
+    //unsolved gen for input
+    printf("Unsolved generation for pasting in input:\n");
+    for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 9; j++) printf("%d ", board[i][j]);
+        
+    }
+    printf("\n\n");
+
     return 0;
 }
