@@ -72,6 +72,7 @@ int main() {
     }
 
     //input of unsolved sudoku [0 mark empty space]
+    printf("\nEnter the unsolved Sudoku:\n");
     for(int i=0;i<9;i++){
         for(int j=0;j<9;j++){
             scanf("%d",&board[i][j]);
